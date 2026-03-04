@@ -1,16 +1,23 @@
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { Users, Eye, Clock, ArrowUpRight } from "lucide-react";
+import { Card, Select, SelectItem } from "@geenius-ui/react-css";
+
 const data = [
     { time: "00:00", visitors: 120, views: 180 }, { time: "04:00", visitors: 80, views: 120 },
     { time: "08:00", visitors: 450, views: 600 }, { time: "12:00", visitors: 820, views: 1200 },
     { time: "16:00", visitors: 650, views: 950 }, { time: "20:00", visitors: 400, views: 580 },
     { time: "23:59", visitors: 200, views: 280 }
 ];
+
 export default function OverviewPage() {
     return (<div style={{ padding: "var(--space-6)", maxWidth: 1400 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "var(--space-6)" }}>
             <h1 style={{ fontSize: "var(--font-size-2xl)", fontWeight: 700 }}>Dashboard</h1>
-            <select style={{ padding: 8, borderRadius: "var(--radius-sm)", border: "1px solid var(--color-border)", background: "var(--color-bg-card)", color: "var(--color-text-primary)", fontSize: "13px" }}><option>Today</option><option>Last 7 days</option><option>Last 30 days</option></select>
+            <Select>
+                <SelectItem value="today">Today</SelectItem>
+                <SelectItem value="7d">Last 7 days</SelectItem>
+                <SelectItem value="30d">Last 30 days</SelectItem>
+            </Select>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "var(--space-4)", marginBottom: "var(--space-6)" }}>
@@ -20,15 +27,15 @@ export default function OverviewPage() {
                 { title: "Bounce Rate", val: "42.3%", change: "-2.1%", icon: ArrowUpRight, inverse: true },
                 { title: "Avg Visit Duration", val: "1m 24s", change: "+5s", icon: Clock }
             ].map(s => (
-                <div key={s.title} className="card" style={{ padding: "var(--space-5)" }}>
+                <Card key={s.title} padding="lg">
                     <div style={{ display: "flex", alignItems: "center", gap: "var(--space-2)", color: "var(--color-text-secondary)", fontSize: "13px", marginBottom: "var(--space-3)" }}><s.icon size={16} />{s.title}</div>
                     <div style={{ fontSize: "32px", fontWeight: 700 }}>{s.val}</div>
                     <div style={{ fontSize: "13px", color: s.inverse ? "var(--color-success)" : "var(--color-success)", marginTop: "var(--space-2)", fontWeight: 500 }}>{s.change} vs prior</div>
-                </div>
+                </Card>
             ))}
         </div>
 
-        <div className="card" style={{ padding: "var(--space-6)", marginBottom: "var(--space-6)" }}>
+        <Card padding="xl" style={{ marginBottom: "var(--space-6)" }}>
             <h2 style={{ fontSize: "16px", fontWeight: 600, marginBottom: "var(--space-5)" }}>Traffic Overview</h2>
             <ResponsiveContainer width="100%" height={350}>
                 <AreaChart data={data}>
@@ -43,6 +50,6 @@ export default function OverviewPage() {
                     <Area type="monotone" dataKey="visitors" stroke="var(--color-accent-primary)" strokeWidth={3} fillOpacity={1} fill="url(#colorVis)" />
                 </AreaChart>
             </ResponsiveContainer>
-        </div>
+        </Card>
     </div>);
 }

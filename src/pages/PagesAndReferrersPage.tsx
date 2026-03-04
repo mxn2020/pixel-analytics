@@ -1,4 +1,5 @@
 import { ArrowRight, Globe, MousePointerClick } from "lucide-react";
+import { Card } from "@geenius-ui/react-css";
 
 export default function PagesAndReferrersPage() {
     const topPages = [
@@ -21,9 +22,9 @@ export default function PagesAndReferrersPage() {
         <h1 style={{ fontSize: "var(--font-size-2xl)", fontWeight: 700, marginBottom: "var(--space-6)" }}>Content & Acquisition</h1>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "var(--space-6)" }}>
-            <div className="card">
+            <Card padding="none">
                 <div style={{ padding: "var(--space-4) var(--space-5)", borderBottom: "1px solid var(--color-border)", display: "flex", alignItems: "center", gap: "var(--space-2)" }}>
-                    <MousePointerClick size={18} style={{ color: "var(--color-accent-primary)" }} /> <h2 style={{ fontSize: "16px", fontWeight: 600 }}>Top Pages</h2>
+                    <MousePointerClick size={18} style={{ color: "var(--color-accent-primary)" }} /> <h2 style={{ fontSize: "16px", fontWeight: 600, margin: 0 }}>Top Pages</h2>
                 </div>
                 <table className="table">
                     <thead><tr><th>Path</th><th style={{ textAlign: "right" }}>Views</th><th style={{ textAlign: "right" }}>Visitors</th></tr></thead>
@@ -37,11 +38,11 @@ export default function PagesAndReferrersPage() {
                         ))}
                     </tbody>
                 </table>
-            </div>
+            </Card>
 
-            <div className="card">
+            <Card padding="none">
                 <div style={{ padding: "var(--space-4) var(--space-5)", borderBottom: "1px solid var(--color-border)", display: "flex", alignItems: "center", gap: "var(--space-2)" }}>
-                    <Globe size={18} style={{ color: "var(--color-accent-primary)" }} /> <h2 style={{ fontSize: "16px", fontWeight: 600 }}>Top Referrers</h2>
+                    <Globe size={18} style={{ color: "var(--color-accent-primary)" }} /> <h2 style={{ fontSize: "16px", fontWeight: 600, margin: 0 }}>Top Referrers</h2>
                 </div>
                 <table className="table">
                     <thead><tr><th>Source</th><th style={{ textAlign: "right" }}>Views</th></tr></thead>
@@ -54,7 +55,7 @@ export default function PagesAndReferrersPage() {
                         ))}
                     </tbody>
                 </table>
-            </div>
+            </Card>
         </div>
     </div>);
 }
