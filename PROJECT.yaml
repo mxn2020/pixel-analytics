@@ -1,5 +1,6 @@
-id: 8e5d4449-2330-4e39-8a3d-56fabfa48310
 name: pixel-analytics
+project_scope: main
+project_type: standalone
 description: React + TypeScript + Vite
 tier: prototype
 lane: oss
@@ -9,5 +10,6 @@ stack: [typescript, react, convex, vite]
 repo: "https://github.com/mxn2020/pixel-analytics"
 deploy_url: null
 last_active: 2026-02-25
-tags: []
-notes: 
+tags: [analytics, tracking, privacy, web, statistics, metrics, tools]
+notes: null
+id: 8e5d4449-2330-4e39-8a3d-56fabfa48310
