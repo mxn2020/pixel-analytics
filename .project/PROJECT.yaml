@@ -1,0 +1,16 @@
+name: pixel-analytics
+project_scope: main
+project_type: standalone
+description: Privacy-first web analytics with real-time dashboards
+tier: prototype
+lane: open-source
+priority: medium
+oss: true
+stack: ["typescript", "react", "vite", "convex"]
+repo: "https://github.com/mxn2020/pixel-analytics"
+deploy_url: null
+last_active: 2026-03-11
+tags: ["pixel-analytics", "convex", "react", "open-source", "ai-tools"]
+notes: null
+id: null
+category: oss-tool
