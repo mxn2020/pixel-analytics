@@ -43,7 +43,7 @@
   },
   "description": "Privacy-first web analytics with real-time dashboards",
   "author": "Mehdi Nabhani",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "keywords": [
     "pixel",
     "analytics",
